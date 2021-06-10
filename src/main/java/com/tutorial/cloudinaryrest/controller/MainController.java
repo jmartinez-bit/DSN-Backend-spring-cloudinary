@@ -37,6 +37,7 @@ public class MainController {
 	ImagenService imagenService;
 	
 	@GetMapping("/list")
+	//@Secured("ROLE_ADMIN")
 	public ResponseEntity<List<Imagen>> list() {
 		List<Imagen> list = imagenService.list();
 		return new ResponseEntity(list, HttpStatus.OK);

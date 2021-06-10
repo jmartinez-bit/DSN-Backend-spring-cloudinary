@@ -21,9 +21,9 @@ public class CloudinaryService {
 	
 	// Se conecta directamente a la cuenta de cloudinary
 	public CloudinaryService() {
-		valuesMap.put("cloud_name", "ggggg");
-		valuesMap.put("api_key", "gggggggg");
-		valuesMap.put("api_secret", "ggggggggggggggggg");
+		valuesMap.put("cloud_name", "");
+		valuesMap.put("api_key", "");
+		valuesMap.put("api_secret", "");
 		cloudinary = new Cloudinary(valuesMap);
 	}
 	
@@ -43,6 +43,8 @@ public class CloudinaryService {
 	
 	// Para convertir multipart en un File
 	private File convert(MultipartFile multipartFile) throws IOException {
+		// Para ubuntu
+		// File file = new File(multipartFile.getOriginalFilename());
 		File file = new File(multipartFile.getOriginalFilename());
 		FileOutputStream fo = new FileOutputStream(file);
 		fo.write(multipartFile.getBytes());
